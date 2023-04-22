@@ -1,18 +1,7 @@
 import React from 'react';
 import TimelineDesktop from './TimelineDesktop';
 import TimelineMobile from './TimelineMobile';
-
-interface Company {
-  timelineTitle: string;
-  timelineDate: string;
-  position?: number;
-}
-
-interface Timeline {
-  curr: number;
-  handleCompany: (i: number) => void;
-  companies: Array<Company>;
-}
+import { Timeline } from './Types';
 
 const Timeline = (props: Timeline) => {
   const { companies, handleCompany, curr } = props;

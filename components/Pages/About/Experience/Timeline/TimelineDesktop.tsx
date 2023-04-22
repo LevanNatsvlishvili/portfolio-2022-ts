@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
-interface StaticPositions {
-  [index: number]: number[];
-}
+import { Timeline, Company, StaticPositions, TimelineDot } from './Types';
 
 const staticPositions: StaticPositions = {
   1: [45],
@@ -10,18 +7,6 @@ const staticPositions: StaticPositions = {
   3: [0, 40, 85],
   4: [0, 30, 60, 85],
 };
-
-interface Company {
-  timelineTitle: string;
-  timelineDate: string;
-  position?: number;
-}
-
-interface Timeline {
-  curr: number;
-  handleCompany: (i: number) => void;
-  companies: Company[];
-}
 
 const TimelineDesktop = (props: Timeline) => {
   const { companies, handleCompany, curr } = props;
@@ -70,36 +55,27 @@ const TimelineDesktop = (props: Timeline) => {
   );
 };
 
-interface TimelineDot {
-  company: Company;
-  isLast: boolean;
-  active: boolean;
-  handleCompany: () => void;
-}
-
-const TimelineDot = ({
-  company,
-  isLast,
-  active,
-  handleCompany,
-}: TimelineDot) => (
-  <div
-    onClick={handleCompany}
-    style={isLast ? { right: 0 } : { left: `${company.position}%` }}
-    className="absolute -top-9 flex flex-col items-center cursor-pointer"
-  >
-    <h1 className="text-white text-base sm:text-xl mb-1">
-      {company.timelineTitle}
-    </h1>
+const TimelineDot = (props: TimelineDot) => {
+  const { company, isLast, active, handleCompany } = props;
+  return (
     <div
-      className={`w-4 h-4 ${
-        active ? 'bg-orange' : 'bg-grey-text'
-      } rounded-1/2 mt-1 sm:mt-0.5 `}
-    />
-    <p className="text-grey-text text-sm sm:text-base mt-2 firago-light">
-      [{company.timelineDate}]
-    </p>
-  </div>
-);
+      onClick={handleCompany}
+      style={isLast ? { right: 0 } : { left: `${company.position}%` }}
+      className="absolute -top-9 flex flex-col items-center cursor-pointer"
+    >
+      <h1 className="text-white text-base sm:text-xl mb-1">
+        {company.timelineTitle}
+      </h1>
+      <div
+        className={`w-4 h-4 ${
+          active ? 'bg-orange' : 'bg-grey-text'
+        } rounded-1/2 mt-1 sm:mt-0.5 `}
+      />
+      <p className="text-grey-text text-sm sm:text-base mt-2 firago-light">
+        [{company.timelineDate}]
+      </p>
+    </div>
+  );
+};
 
 export default TimelineDesktop;
