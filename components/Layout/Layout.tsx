@@ -1,7 +1,4 @@
 import React, { ReactNode, useEffect } from 'react';
-// import Scroll from './Scroll';
-// import HeaderComponent from './HeaderComponent';
-// import Loading from 'Components/Loading';
 import { useRouter } from 'next/router';
 import useStore from 'utils/Store/Context';
 import Scroll from './Scroll';
