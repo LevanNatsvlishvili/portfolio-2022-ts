@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import FrontText from 'components/Animations/FrontText';
 import Button from 'components/Components/Button';
-import Image from 'next/image';
 import { paths } from 'utils/Paths';
 import useStore from 'utils/Store/Context';
 
@@ -26,11 +26,10 @@ function About() {
           currView === 1 ? 'glass-effect-active' : ''
         } `}
       >
-        <Image
+        <img
           className="object-cover w-full h-full rounded-lg"
           src="/images/me.jpeg"
           alt="profile"
-          layout="fill"
         />
       </div>
     </section>

@@ -1,15 +1,14 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
-import Image from 'next/image';
 import React from 'react';
 
 const Summary = () => {
   return (
     <div className="styled-card w-full flex-col pt-12 h-full p-5 flex items-center">
       <div className="about-image-container w-[200px] h-[200px] ">
-        <Image
+        <img
           className="about-image-container-image"
           src="/images/me2.jpg"
-          layout="fill"
           alt="Frontend developer React developer NextJS ReactJS"
         />
       </div>

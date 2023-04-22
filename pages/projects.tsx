@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // import { HeaderTagsRenderer } from 'Components/HeaderTagsRenderer';
 import { HeaderTagsRenderer } from 'components/Components/HeaderTagsRenderer';
 import Image from 'next/image';
@@ -89,13 +90,8 @@ interface ProjectCard {
 const ProjectCard = (props: ProjectCard) => {
   const { title, url, thumbnail, techStack } = props.project;
   return (
-    <div className="project-card relative glass-effect h-[200px]">
-      <Image
-        src={thumbnail}
-        className="w-full h-60 rounded-xl "
-        layout="fill"
-        alt={title}
-      />
+    <div className="project-card relative glass-effect ">
+      <img src={thumbnail} className="w-full h-60 rounded-xl " alt={title} />
       <div className="opacity-0 z-10 transition duration-300 w-full h-full absolute top-0 rounded-xl bg-[#181D5E]/30 blur" />
       <div className="opacity-0 z-30 flex transition duration-300 w-full h-full absolute top-0 rounded-xl items-center justify-center flex-col mt-10">
         <a
@@ -127,10 +123,9 @@ const ProjectCardMobile = (props: ProjectCard) => {
         description="An experienced Web Developer Portfolio website, proficient in Javascript reactJS and nextJS"
       />
       <div className="relative glass-effect h-[250px] sm:h-[300px] md:h-[400px]">
-        <Image
+        <img
           src={thumbnail}
           className="w-full h-full rounded-xl "
-          layout="fill"
           alt={title}
         />
       </div>
