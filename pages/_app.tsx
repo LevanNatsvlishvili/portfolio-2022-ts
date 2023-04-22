@@ -1,5 +1,5 @@
-import 'styles/global.css';
 import Layout from 'components/Layout';
+import 'styles/global.css';
 import type { AppProps } from 'next/app';
 import { StoreContextProvider } from 'utils/Store';
 
