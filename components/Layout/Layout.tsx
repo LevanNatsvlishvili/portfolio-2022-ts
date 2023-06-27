@@ -4,6 +4,7 @@ import useStore from 'utils/Store/Context';
 import Scroll from './Scroll';
 import Loading from 'components/Components/Loading';
 import HeaderComponent from './HeaderComponent';
+import ScrollDown from 'components/Components/ScrollDown';
 
 function useQuery() {
   const location = useRouter();
@@ -37,15 +38,12 @@ const Layout = ({ children }: Layout) => {
         setCurrView={setCurrView}
       />
       {shouldScrollDisplay && (
-        <Scroll
-          shouldScrollDisplay={shouldScrollDisplay || false}
-          currView={currView}
-          setCurrView={setCurrView}
-        >
+        <Scroll shouldScrollDisplay={shouldScrollDisplay || false} currView={currView} setCurrView={setCurrView}>
           <main>{children}</main>
         </Scroll>
       )}
 
+      <ScrollDown currView={currView} />
       {!shouldScrollDisplay && <main>{children}</main>}
 
       <div className={`stars-container stars-${currView}`}>
