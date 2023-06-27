@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import clsx from 'clsx';
+import Link from 'next/link';
 import React from 'react';
 import { paths } from 'utils/Paths';
 import useStore from 'utils/Store/Context';
@@ -12,13 +13,7 @@ interface SocialLink {
 const SocialLink = ({ url, icon }: SocialLink) => (
   <a className="px-3 " target="_blank" href={url} rel="noreferrer">
     <div className="text-base flex w-8 h-8">
-      <img
-        className="socmedia-icon"
-        width="30px"
-        height="30px"
-        src={icon}
-        alt="soc media"
-      />
+      <img className="socmedia-icon" width="30px" height="30px" src={icon} alt="soc media" />
     </div>
   </a>
 );
@@ -32,13 +27,7 @@ interface NavigationLink {
 const NavigationLink = ({ onClick, icon }: NavigationLink) => (
   <div onClick={onClick} className="px-3 cursor-pointer">
     <div className="text-base flex w-8 h-8">
-      <img
-        className="socmedia-icon"
-        width="30px"
-        height="30px"
-        src={icon}
-        alt="soc media"
-      />
+      <img className="socmedia-icon" width="30px" height="30px" src={icon} alt="soc media" />
     </div>
   </div>
 );
@@ -66,26 +55,23 @@ function HeaderContactLinks(props: HeaderContactLinks) {
             url={paths.home}
             icon="/images/SocMedia/home.svg"
           />
-          <SocialLink
-            url="https://www.linkedin.com/in/levnac"
-            icon="/images/SocMedia/linkedin.svg"
-          />
-          <SocialLink
-            url="https://github.com/LevanNatsvlishvili"
-            icon="/images/SocMedia/github2.svg"
-          />
-          <SocialLink
-            url="https://www.upwork.com/freelancers/~01d797802b8c4359ad"
-            icon="/images/SocMedia/upwork.svg"
-          />
+          <SocialLink url="https://www.linkedin.com/in/levnac" icon="/images/SocMedia/linkedin.svg" />
+          <SocialLink url="https://github.com/LevanNatsvlishvili" icon="/images/SocMedia/github2.svg" />
         </div>
       </div>
       <div className="ml-auto">
         <div className="flex items-center">
-          <div
-            onClick={handleNavOpen}
-            className={clsx('navbutton', { 'navbutton-active': isNavOpen })}
-          ></div>
+          <div className="items-center space-x-6 hidden lg:flex">
+            <div className="socmedia-icon">
+              <Link href={paths.projects}>Projects</Link>
+            </div>
+            <div className="socmedia-icon">
+              <Link href={paths.projects}>About</Link>
+            </div>
+          </div>
+          <div className="lg:hidden">
+            <div onClick={handleNavOpen} className={clsx('navbutton', { 'navbutton-active': isNavOpen })}></div>
+          </div>
         </div>
       </div>
     </div>
