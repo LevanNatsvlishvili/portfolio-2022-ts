@@ -1,15 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 // import { HeaderTagsRenderer } from 'Components/HeaderTagsRenderer';
 import { HeaderTagsRenderer } from 'components/Components/HeaderTagsRenderer';
-import Image from 'next/image';
 import React from 'react';
 
 const projects = [
   {
     title: 'Saba',
     url: 'https://saba.com.ge',
-    thumbnail: '/images/projects/no-image.jpg',
-    techStack: ['React', 'Bootstrap', 'Typescript'],
+    thumbnail: '/images/projects/saba.png',
+    techStack: ['React', 'Tailwind', 'Typescript'],
   },
   {
     title: 'Archi',
@@ -59,10 +58,7 @@ const Projects = () => {
         <div className="px-4 scroll-bar overflow-auto h-[90%]">
           <div className="h-auto sm:gap-8 gap-y-10 grid   grid-cols-12">
             {projects.map((project, i) => (
-              <div
-                key={i}
-                className="col-span-12 lg:col-span-4 2xl:col-span-3 h-fit"
-              >
+              <div key={i} className="col-span-12 lg:col-span-4 2xl:col-span-3 h-fit">
                 <div className="hidden lg:block">
                   <ProjectCard project={project} />
                 </div>
@@ -105,9 +101,7 @@ const ProjectCard = (props: ProjectCard) => {
       </div>
       <div className="z-20 flex transition duration-300 w-full h-full absolute top-0 rounded-xl  items-center justify-center flex-col">
         <h1 className="text-lg text-center ">{title}</h1>
-        <h3 className="text-sm text-orange w-1/2 text-center">
-          {techStack.join(', ')}
-        </h3>
+        <h3 className="text-sm text-orange w-1/2 text-center">{techStack.join(', ')}</h3>
       </div>
     </div>
   );
@@ -123,17 +117,11 @@ const ProjectCardMobile = (props: ProjectCard) => {
         description="An experienced Web Developer Portfolio website, proficient in Javascript reactJS and nextJS"
       />
       <div className="relative glass-effect h-[250px] sm:h-[300px] md:h-[400px]">
-        <img
-          src={thumbnail}
-          className="w-full h-full rounded-xl "
-          alt={title}
-        />
+        <img src={thumbnail} className="w-full h-full rounded-xl " alt={title} />
       </div>
       <div className="z-20 mt-4 flex transition duration-300 w-full h-full  top-0 rounded-xl  items-center justify-center flex-col">
         <h1 className="text-lg text-center ">{title}</h1>
-        <h3 className="text-sm text-orange mt-2 w-1/2 text-center">
-          {techStack.join(', ')}
-        </h3>
+        <h3 className="text-sm text-orange mt-2 w-1/2 text-center">{techStack.join(', ')}</h3>
         <a
           className="text-grey-text border-blue-glow border-2 text-xs w-28 h-7 flex items-center justify-center bg-[#0D162860] rounded-3xl mt-2"
           href={url}
