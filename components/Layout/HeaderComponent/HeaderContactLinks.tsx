@@ -66,7 +66,7 @@ function HeaderContactLinks(props: HeaderContactLinks) {
               <Link href={paths.projects}>Projects</Link>
             </div>
             <div className="socmedia-icon">
-              <Link href={paths.projects}>About</Link>
+              <Link href={paths.about}>About</Link>
             </div>
           </div>
           <div className="lg:hidden">
