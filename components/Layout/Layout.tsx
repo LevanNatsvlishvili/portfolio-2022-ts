@@ -43,7 +43,7 @@ const Layout = ({ children }: Layout) => {
         </Scroll>
       )}
 
-      <ScrollDown currView={currView} />
+      {shouldScrollDisplay && <ScrollDown currView={currView} />}
       {!shouldScrollDisplay && <main>{children}</main>}
 
       <div className={`stars-container stars-${currView}`}>
