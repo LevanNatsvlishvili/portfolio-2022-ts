@@ -13,11 +13,13 @@ const About = () => {
   return (
     <div className="overflow-auto scroll-bar h-[100vh] pb-16">
       <HeaderTagsRenderer
-        title="Web Developer Portfolio Website About"
-        metaTitle="Web Developer Portfolio Website"
-        description="An experienced Web Developer Portfolio website, proficient in Javascript reactJS and nextJS"
+        title="About - Levan Natsvlishvili - Frontend Developer Portfolio"
+        metaTitle="About - Levan Natsvlishvili - Frontend React developer - Skills"
+        description="Levan Natsvlishvili, an experienced frontend developer, specializing in Javascript, ReactJS, and NextJS with 4 years of experience. View portfolio to see completed projects."
         image="/images/projects/portfolio.png"
+        ogDescription="Discover the portfolio of Levan Natsvlishvili, a seasoned frontend developer. Proficient in Javascript, ReactJS, and NextJS,TailwindCSS with a track record of successful projects. "
       />
+
       <div className="relative pt-20 sm:pt-32 px-4 md:px-10 z-10 flex grid-cols-12 gap-y-8 gap-x-2 gap-2 md:gap-8 grid">
         <div className="col-span-12 lg:col-span-4 2xl:col-span-3">
           <Summary />

@@ -46,10 +46,11 @@ const Projects = () => {
   return (
     <div className="relative pt-20 sm:pt-32 px-4 sm:px-10 z-10 h-[90vh] w-screen ">
       <HeaderTagsRenderer
-        title="Web Developer Portfolio Website Projects"
-        metaTitle="Web Developer Portfolio Website"
-        description="An experienced Web Developer Portfolio website, proficient in Javascript reactJS and nextJS"
+        title="Projects - Levan Natsvlishvili - Frontend Developer Portfolio"
+        metaTitle="Projects - Levan Natsvlishvili - Frontend React developer - NextJS, ReactJS, Javascript, Typesript"
+        description="Levan Natsvlishvili, an experienced frontend developer, specializing in Javascript, ReactJS, and NextJS with 4 years of experience. View portfolio to see completed projects."
         image="/images/projects/portfolio.png"
+        ogDescription="Discover the portfolio of Levan Natsvlishvili, a seasoned frontend developer. Proficient in Javascript, ReactJS, and NextJS,TailwindCSS with a track record of successful projects. "
       />
       <div className="styled-card h-full px-1 sm:px-4">
         <div className="px-4 pb-4">
