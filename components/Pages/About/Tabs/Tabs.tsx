@@ -16,12 +16,12 @@ const Tabs = () => {
 
   return (
     <div>
+      {/* Switch tabs buttons */}
       <Switch handleTab={handleTab} currTab={currTab} />
+
+      {/* Tabs that display skills */}
       <div className="overflow-hidden h-72 pl-2 mt-2 ">
-        <div
-          style={{ transform: `translateY(-${currTab * 19}rem)` }}
-          className="px-2 -ml-2 transition duration-500"
-        >
+        <div style={{ transform: `translateY(-${currTab * 19}rem)` }} className="px-2 -ml-2 transition duration-500">
           {tabs.map((tab, i) => (
             <Fragment key={i}>{tab}</Fragment>
           ))}

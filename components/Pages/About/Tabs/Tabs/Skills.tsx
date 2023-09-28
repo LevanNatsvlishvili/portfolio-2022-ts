@@ -13,19 +13,19 @@ const skills = [
     logo: 'images/skills/react.svg',
     skill: 'React',
     level: 'Advanced',
-    time: '3 Years',
+    time: '4 Years',
   },
   {
     logo: 'images/skills/next.svg',
     skill: 'Next',
     level: 'Basics',
-    time: ' 1 Years',
+    time: '2 Years',
   },
   {
     logo: 'images/skills/typescript.svg',
     skill: 'Typescript',
     level: 'Intermediate',
-    time: '1 Year',
+    time: '2 Year',
   },
   {
     logo: 'images/skills/html.svg',
@@ -49,7 +49,7 @@ const skills = [
     logo: 'images/skills/tailwind.svg',
     skill: 'Tailwind-CSS',
     level: 'Intermediate',
-    time: '2 Years',
+    time: '3 Years',
   },
 ];
 
@@ -61,12 +61,7 @@ const Skills = () => {
           <div className="w-full grid grid-cols-12 gap-x-14 gap-y-8">
             {skills.map((skill, i) => (
               <div key={i} className="col-span-12 lg:col-span-6 xl:col-span-4">
-                <Skill
-                  logo={skill.logo}
-                  skill={skill.skill}
-                  level={skill.level}
-                  time={skill.time}
-                />
+                <Skill logo={skill.logo} skill={skill.skill} level={skill.level} time={skill.time} />
               </div>
             ))}
           </div>

@@ -33,9 +33,7 @@ const Switch = (props: Switch) => {
       }}
       {...rest}
     >
-      <div className="h-full w-full flex items-center justify-center text-base text-grey-text ">
-        {children}
-      </div>
+      <div className="h-full w-full flex items-center justify-center text-base text-grey-text ">{children}</div>
       <div className="h-full bg-[#2c3d7a] opacity-40 w-1 blue-glow shadow-blue-glow" />
     </div>
   );
@@ -49,9 +47,7 @@ const Switch = (props: Switch) => {
       }}
       {...rest}
     >
-      <div className="h-full w-full flex items-center justify-center text-base text-grey-text ">
-        {children}
-      </div>
+      <div className="h-full w-full flex items-center justify-center text-base text-grey-text ">{children}</div>
     </div>
   );
   const MiddleButton = ({ children, active, divide, ...rest }: Buttons) => (
@@ -64,9 +60,7 @@ const Switch = (props: Switch) => {
       }}
       {...rest}
     >
-      <div className="h-full w-full flex items-center justify-center text-base text-grey-text ">
-        {children}
-      </div>
+      <div className="h-full w-full flex items-center justify-center text-base text-grey-text ">{children}</div>
       <div className="h-full bg-[#2c3d7a] opacity-40 w-1 blue-glow shadow-blue-glow" />
     </div>
   );

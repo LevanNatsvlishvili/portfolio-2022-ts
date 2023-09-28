@@ -62,11 +62,11 @@ function HeaderContactLinks(props: HeaderContactLinks) {
       <div className="ml-auto">
         <div className="flex items-center">
           <div className="items-center space-x-6 hidden lg:flex">
-            <div className="socmedia-icon">
-              <Link href={paths.projects}>Projects</Link>
+            <div onClick={() => handleNavigationLoading(paths.projects)} className="cursor-pointer socmedia-icon">
+              Projects
             </div>
-            <div className="socmedia-icon">
-              <Link href={paths.about}>About</Link>
+            <div onClick={() => handleNavigationLoading(paths.about)} className="cursor-pointer socmedia-icon">
+              About
             </div>
           </div>
           <div className="lg:hidden">

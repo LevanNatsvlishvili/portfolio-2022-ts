@@ -12,24 +12,16 @@ const Summary = () => {
           alt="Frontend developer React developer NextJS ReactJS"
         />
       </div>
-      <h5 className="pt-8 text-center text-grey-text text-3xl text-white">
-        Levan Natsvlishvili
-      </h5>
-      <h1 className="pt-1 text-center pb-6 text-grey-text text-xl text-orange">
-        Front-end Developer
-      </h1>
+      <h5 className="pt-8 text-center text-grey-text text-3xl text-white">Levan Natsvlishvili</h5>
+      <h1 className="pt-1 text-center pb-6 text-grey-text text-xl text-orange">Front-end Developer</h1>
       <p className="text-grey-text p-2  text-base scroll-bar firago-light lg:h-80 overflow-auto">
-        Passionate and Enthusiastic Software Engineer with 3 years of
-        professional experience. Procifient in ReactJS And Javascript, Expert at
-        CSS, UI-UX and user psychology, Experienced in Typescript and NextJS
-        technologies. Passionate about css animations and aesthetics in general.
+        Software Engineer with <span className="text-orange">4 years of experience</span> in Web development focusing on
+        Frontend development. <br />
+        Primary tech stack consisting of #React, #Next, #Javascript & #Typescript. <br />
+        Experienced in NodeJS/Express/Nest, React-Native
         <br />
-        Currently my goals are to learn BLOCKCHAIN development and improve my
-        expertise and experience in Typescript and NextJS,
-        <br />
-        <span className="text-orange">For the recruiters: </span>At the moment
-        I'm taking only part-time offers or flexible hour contracts. I'm
-        especially intersted in Blockchain offers.
+        <span className="text-orange">Open to offers:</span> Frontend developer, React developer, Fullstack developer,
+        React Native developer
       </p>
     </div>
   );

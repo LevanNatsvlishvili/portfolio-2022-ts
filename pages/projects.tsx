@@ -52,6 +52,7 @@ const Projects = () => {
         image="/images/projects/portfolio.png"
         ogDescription="Discover the portfolio of Levan Natsvlishvili, a seasoned frontend developer. Proficient in Javascript, ReactJS, and NextJS,TailwindCSS with a track record of successful projects. "
       />
+
       <div className="styled-card h-full px-1 sm:px-4">
         <div className="px-4 pb-4">
           <h1>Projects</h1>
@@ -112,11 +113,6 @@ const ProjectCardMobile = (props: ProjectCard) => {
   const { title, url, thumbnail, techStack } = props.project;
   return (
     <div>
-      <HeaderTagsRenderer
-        title="Web Developer Portfolio Website Projects"
-        metaTitle="Web Developer Portfolio Website Projects"
-        description="An experienced Web Developer Portfolio website, proficient in Javascript reactJS and nextJS"
-      />
       <div className="relative glass-effect h-[250px] sm:h-[300px] md:h-[400px]">
         <img src={thumbnail} className="w-full h-full rounded-xl " alt={title} />
       </div>
