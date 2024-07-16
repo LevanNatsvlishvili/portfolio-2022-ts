@@ -6,6 +6,7 @@
 @import './fonts.css';
 @import './base.css';
 @import './animations.css';
+@import './tailwind.css';
 
 /* components */
 @import './components/button.css';

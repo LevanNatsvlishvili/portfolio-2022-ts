@@ -63,14 +63,12 @@ function Scroll(props: Scroll) {
 
     document.body.addEventListener('mousewheel', MouseWheelHandler, false);
     document.body.addEventListener('DOMMouseScroll', MouseWheelHandler, false);
+    // Add event listener for mobile touch screen
+    document.body.addEventListener('touchmove', MouseWheelHandler);
 
     return () => {
       document.body.removeEventListener('mousewheel', MouseWheelHandler, false);
-      document.body.removeEventListener(
-        'DOMMouseScroll',
-        MouseWheelHandler,
-        false
-      );
+      document.body.removeEventListener('DOMMouseScroll', MouseWheelHandler, false);
     };
   }, [shouldScrollDisplay]);
 

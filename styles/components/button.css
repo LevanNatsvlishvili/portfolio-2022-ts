@@ -7,19 +7,24 @@
   transition: 0.5s;
   letter-spacing: 4px;
   overflow: hidden;
-  color: rgba(242, 140, 40, 1);
   display: flex;
   justify-content: center;
   align-items: center;
   width: fit-content;
+  box-shadow: 2px 2px 13px 2px #2c3d7a;
+  background: rgb(13 22 40 / 60%);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  /* color: #91b3bc; */
+  color: rgba(242, 140, 40, 1);
 }
 .neon-button:hover {
-  background: rgba(242, 140, 40, 1);
-  color: #072142;
-  box-shadow: 0 0 1px rgb(242 140 40), 0 0 5px rgb(242 140 40),
-    0 0 10px rgb(242 140 40), 0 0 20px rgb(242 140 40);
+  /* background: rgba(242, 140, 40, 1); */
+  color: #91b3bc;
+  background: #2c3d7a60;
+  /* box-shadow: 0 0 1px rgb(242 140 40), 0 0 5px rgb(242 140 40), 0 0 10px rgb(242 140 40), 0 0 20px rgb(242 140 40); */
 }
-
+/* 
 .neon-button span {
   position: absolute;
   display: block;
@@ -95,4 +100,4 @@
   100% {
     bottom: 100%;
   }
-}
+} */

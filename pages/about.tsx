@@ -28,10 +28,7 @@ const About = () => {
           <Experience />
           <Tabs />
           <div className="px-1">
-            <Button
-              onClick={() => handleNavigationLoading(paths.projects)}
-              className="mt-5 w-full text-base sm:text-2xl"
-            >
+            <Button onClick={() => handleNavigationLoading(paths.projects)} className="mt-5 w-full">
               Continue To Projects
             </Button>
           </div>

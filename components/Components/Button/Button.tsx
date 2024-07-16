@@ -1,26 +1,15 @@
+import clsx from 'clsx';
 import React, { ReactNode } from 'react';
 
 interface Button {
   children: ReactNode;
   className?: string;
-  full?: boolean;
   onClick?: () => void | Promise<unknown>;
 }
 
-function Button({ children, className, full, ...rest }: Button) {
+function Button({ children, className, ...rest }: Button) {
   return (
-    <button
-      className={`px-4 py-2 neon-button 
-    ${className} 
-    ${full ? 'mt-5 w-full text-base sm:text-2xl' : ''} 
-    
-    `}
-      {...rest}
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
+    <button className={clsx('px-6 py-2 neon-button text-base sm:text-2xl ', className)} {...rest}>
       {children}
     </button>
   );

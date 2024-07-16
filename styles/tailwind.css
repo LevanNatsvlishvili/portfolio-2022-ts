@@ -1,0 +1,12 @@
+@tailwind base;
+
+@layer base {
+  .blue-neon-button {
+    @apply shadow-neon-glow bg-[#2c3d7a60];
+  }
+
+  /* Centering div */
+  .center {
+    @apply flex justify-center items-center;
+  }
+}
