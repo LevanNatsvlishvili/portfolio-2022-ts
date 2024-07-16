@@ -11,9 +11,7 @@ function FrontText(props: FrontText) {
   const { shouldDisplay, heading1, heading2, bottom } = props;
   return (
     <div
-      className={`animated-title my-6 ${!heading2 ? 'h-40' : 'h-60'} ${
-        shouldDisplay ? 'start-text-animation' : ''
-      }`}
+      className={`animated-title my-6 ${!heading2 ? 'h-40' : 'h-60'} ${shouldDisplay ? 'start-text-animation' : ''}`}
     >
       <div className="text-top h-3/4">
         <div className="text-7xl leading-tight px-44 mb-2">
@@ -29,4 +27,4 @@ function FrontText(props: FrontText) {
   );
 }
 
-export default FrontText;
+export default React.memo(FrontText);

@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect, useRef, useState } from 'react';
+import React, { memo, useEffect, useRef, useState } from 'react';
 import FormButton from './FormButton';
 import emailjs from '@emailjs/browser';
 
@@ -20,9 +20,7 @@ function Contact(props: { shouldDisplay: boolean }) {
   useEffect(() => {
     if (formRef.current) {
       setViewBox(
-        `0 0 ${formRef.current.offsetWidth} ${
-          formRef.current.offsetHeight + formRef.current.offsetHeight / 2
-        }`
+        `0 0 ${formRef.current.offsetWidth} ${formRef.current.offsetHeight + formRef.current.offsetHeight / 2}`
       );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -49,21 +47,14 @@ function Contact(props: { shouldDisplay: boolean }) {
       return;
     }
     if (formRef.current) {
-      emailjs
-        .sendForm(
-          'service_6mklyn4',
-          'template_7icvxne',
-          formRef.current,
-          '4myjOx_MvzMjOyqz7'
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
+      emailjs.sendForm('service_6mklyn4', 'template_7icvxne', formRef.current, '4myjOx_MvzMjOyqz7').then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
     }
     setSubmited(true);
     setTimeout(() => {
@@ -152,15 +143,7 @@ function Contact(props: { shouldDisplay: boolean }) {
                   r="9.1"
                 />
                 <g className="owl_iris_right">
-                  <ellipse
-                    className="iris"
-                    stroke="#000"
-                    strokeMiterlimit="10"
-                    cx="286.4"
-                    cy="21.7"
-                    rx="3"
-                    ry="2.9"
-                  />
+                  <ellipse className="iris" stroke="#000" strokeMiterlimit="10" cx="286.4" cy="21.7" rx="3" ry="2.9" />
                   <path
                     className="light"
                     fill="#FCEE21"
@@ -239,4 +222,4 @@ function Contact(props: { shouldDisplay: boolean }) {
   );
 }
 
-export default Contact;
+export default memo(Contact);

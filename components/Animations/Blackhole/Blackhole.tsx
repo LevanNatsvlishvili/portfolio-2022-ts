@@ -1,17 +1,13 @@
 import React from 'react';
 
-interface Blackhole {
+interface BlackholeProps {
   shouldDisplay: boolean;
 }
 
-function Blackhole(props: Blackhole) {
+function Blackhole(props: BlackholeProps) {
   const { shouldDisplay } = props;
   return (
-    <div
-      className={`absolute top-0 left-0 lg:left-1/4 -z-10 ${
-        shouldDisplay ? 'blackhole-load' : ''
-      }`}
-    >
+    <div className={`absolute top-0 left-0 lg:left-1/4 -z-10 ${shouldDisplay ? 'blackhole-load' : ''}`}>
       <bh-container>
         <bh-doppler></bh-doppler>
         <bh-photon-ring></bh-photon-ring>
@@ -23,4 +19,4 @@ function Blackhole(props: Blackhole) {
   );
 }
 
-export default Blackhole;
+export default React.memo(Blackhole);

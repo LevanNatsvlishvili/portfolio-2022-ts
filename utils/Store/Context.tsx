@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useMemo } from 'react';
 import { useRouter } from 'next/router';
 import { Url } from 'next/dist/shared/lib/router/router';
 
@@ -24,9 +24,7 @@ function createInitialValue(): StoreContextValue {
   };
 }
 
-export const StoreContext = createContext<StoreContextValue>(
-  createInitialValue()
-);
+export const StoreContext = createContext<StoreContextValue>(createInitialValue());
 
 export const StoreContextProvider = ({ children }: StoreContextProvider) => {
   const router = useRouter();
@@ -44,11 +42,17 @@ export const StoreContextProvider = ({ children }: StoreContextProvider) => {
     }, 1100);
   };
 
+  const viewValues = useMemo(() => {
+    return {
+      currView,
+      setCurrView,
+    };
+  }, [currView]);
+
   return (
     <StoreContext.Provider
       value={{
-        currView,
-        setCurrView,
+        ...viewValues,
         loading,
         setLoading,
         handleNavigationLoading,

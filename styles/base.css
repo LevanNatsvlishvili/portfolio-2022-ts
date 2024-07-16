@@ -36,25 +36,11 @@ body {
   margin: 0;
   height: 100%;
   overflow: hidden;
-  background-image: linear-gradient(
-    to bottom,
-    #072142,
-    #061c37,
-    #07182b,
-    #061220,
-    #020b16
-  );
+  background-image: linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);
 }
 
 .bg-global {
-  background-image: linear-gradient(
-    to bottom,
-    #072142,
-    #061c37,
-    #07182b,
-    #061220,
-    #020b16
-  );
+  background-image: linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);
 }
 
 /* Slider */
@@ -72,13 +58,13 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-50%));
+    transform: translateX(calc(-100%));
   }
 }
 
 .slider-auto {
-  animation: translateinfinite 40s linear infinite;
-  animation: translateinfinite 40s linear infinite;
+  animation: translateinfinite 10s linear infinite;
+  animation: translateinfinite 10s linear infinite;
 }
 
 .styled-card {
