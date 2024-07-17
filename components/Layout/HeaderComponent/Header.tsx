@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import HeaderContactLinks from './HeaderContactLinks';
-import HeaderNavigation from './HeaderNavigation';
-import HeaderNavigationMobile from './HeaderNavigationMobile';
-import HeaderScrollNav from './HeaderScrollNav';
+import dynamic from 'next/dynamic';
+import { useMediaQuery } from 'react-responsive';
+
+const HeaderNavigation = dynamic(() => import('./HeaderNavigation'), { ssr: false });
+const HeaderNavigationMobile = dynamic(() => import('./HeaderNavigationMobile'), { ssr: false });
+const HeaderScrollNav = dynamic(() => import('./HeaderScrollNav'), { ssr: false });
 
 interface Head {
   currView: number;
@@ -13,25 +16,21 @@ interface Head {
 function Head(props: Head) {
   const { currView, setCurrView, shouldScrollDisplay } = props;
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const isNavMenuNeeded = useMediaQuery({ query: '(max-width: 1024px)' });
 
   const handleNavOpen = () => {
     setIsNavOpen(!isNavOpen);
   };
-
   return (
     <header className="fixed w-full z-20">
       <HeaderContactLinks isNavOpen={isNavOpen} handleNavOpen={handleNavOpen} />
 
       <div className="hidden md:block">
-        <HeaderNavigation isNavOpen={isNavOpen} handleNavOpen={handleNavOpen} />
+        {isNavMenuNeeded && <HeaderNavigation isNavOpen={isNavOpen} handleNavOpen={handleNavOpen} />}
       </div>
-      <div className="block md:hidden">
-        <HeaderNavigationMobile isNavOpen={isNavOpen} />
-      </div>
+      <div className="block md:hidden">{isNavMenuNeeded && <HeaderNavigationMobile isNavOpen={isNavOpen} />}</div>
 
-      {shouldScrollDisplay && (
-        <HeaderScrollNav currView={currView} setCurrView={setCurrView} />
-      )}
+      {shouldScrollDisplay && <HeaderScrollNav currView={currView} setCurrView={setCurrView} />}
     </header>
   );
 }

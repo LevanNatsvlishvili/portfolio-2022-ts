@@ -43,30 +43,6 @@ body {
   background-image: linear-gradient(to bottom, #072142, #061c37, #07182b, #061220, #020b16);
 }
 
-/* Slider */
-
-@-webkit-keyframes translateinfinite {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-50%));
-  }
-}
-@keyframes translateinfinite {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-100%));
-  }
-}
-
-.slider-auto {
-  animation: translateinfinite 10s linear infinite;
-  animation: translateinfinite 10s linear infinite;
-}
-
 .styled-card {
   box-shadow: 2px 2px 13px -1px #2c3d7a;
   background: rgb(13 22 40 / 60%);

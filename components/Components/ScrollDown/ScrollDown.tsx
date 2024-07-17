@@ -10,19 +10,19 @@ const ScrollDown: FC<ScrollDownProps> = ({ currView }) => {
   return (
     <div
       className={clsx(
-        'flex items-center flex-col -mb-10-0 duration-1000 opacity-0 absolute top-[75%] left-[50%] -translate-x-[50%]',
-        {
-          '!opacity-100': currView === 0,
-        }
+        'w-full flex items-center flex-col -mb-10-0 duration-1000 opacity-0 absolute top-[75%] left-[50%] -translate-x-[50%]',
+        currView === 0 && '!opacity-100'
       )}
     >
-      <img src="/images/icons/scroll.svg" className="md:block hidden" alt="section-Scroll" />
-      <img src="/images/icons/scrollMobile.svg" className="md:hidden block" alt="arrow" />
-      <div className="scroll-arrow">
-        <img src="/images/icons/scrollArrow.svg" alt="" />
+      <div className="relative flex justify-center w-[-webkit-fill-available]">
+        <img src="/images/icons/scroll.svg" className="absolute md:visible invisible" alt="section-Scroll" />
+        <img src="/images/icons/scrollMobile.svg" className="absolute md:invisible visible" alt="arrow" />
+        <div className="absolute top-10 scroll-arrow">
+          <img src="/images/icons/scrollArrow.svg" alt="" />
+        </div>
+        <p className="absolute top-14 invisible md:visible text-lg mt-4">Scroll down to navigate</p>
+        <p className="absolute top-14 visible md:invisible text-lg mt-4">Swipe down to navigate</p>
       </div>
-      <p className="hidden md:block text-lg mt-4">Scroll down to navigate</p>
-      <p className="block md:hidden text-lg mt-4">Swipe down to navigate</p>
     </div>
   );
 };

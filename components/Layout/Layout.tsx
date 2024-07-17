@@ -4,7 +4,8 @@ import useStore from 'utils/Store/Context';
 import Scroll from './Scroll';
 import Loading from 'components/Components/Loading';
 import HeaderComponent from './HeaderComponent';
-import ScrollDown from 'components/Components/ScrollDown';
+import dynamic from 'next/dynamic';
+const ScrollDown = dynamic(() => import('components/Components/ScrollDown'), { ssr: false });
 
 function useQuery() {
   const location = useRouter();

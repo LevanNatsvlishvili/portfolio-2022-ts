@@ -83,7 +83,7 @@ const Tabs = () => {
       <div className="overflow-hidden h-72 pl-2 mt-2 ">
         <div style={{ transform: `translateY(-${currTab * 19}rem)` }} className="px-2 -ml-2 transition duration-500">
           {tabs.map((skillSet: tabsInterface, i) => (
-            <Skills skillSet={skillSet.sections} />
+            <Skills key={i} skillSet={skillSet.sections} />
           ))}
         </div>
       </div>

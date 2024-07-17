@@ -5,6 +5,7 @@ import Button from 'components/Components/Button';
 import Image from 'next/image';
 import { paths } from 'utils/Paths';
 import useStore from 'utils/Store/Context';
+import me from 'public/images/me.jpeg';
 
 function About() {
   const { currView, handleNavigationLoading } = useStore();
@@ -23,7 +24,7 @@ function About() {
           currView === 1 && 'glass-effect-active'
         )}
       >
-        <Image className="object-cover w-full h-full rounded-lg" src="/images/me.jpeg" alt="profile" fill />
+        <Image className="object-cover w-full h-full rounded-lg" src={me} alt="profile" fill />
       </div>
     </section>
   );

@@ -3,10 +3,7 @@ import About from 'components/Pages/Home/About';
 import Contact from 'components/Pages/Home/Contact';
 import Projects from 'components/Pages/Home/Projects';
 import Welcome from 'components/Pages/Home/Welcome';
-// import dynamic from 'next/dynamic'
-// const DynamicHeader = dynamic(() => import('../components/header'), {
-//   loading: () => <p>Loading...</p>,
-// })
+
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {

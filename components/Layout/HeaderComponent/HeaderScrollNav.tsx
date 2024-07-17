@@ -19,18 +19,10 @@ const HeaderScrollNav = (props: HeaderScrollNav) => {
   return (
     <>
       <div className="hidden lg:block">
-        <DesktopWidth
-          pages={pages}
-          handleNavigation={handleNavigation}
-          currView={currView}
-        />
+        <DesktopWidth pages={pages} handleNavigation={handleNavigation} currView={currView} />
       </div>
       <div className="lg:hidden">
-        <MobileWidth
-          pages={pages}
-          handleNavigation={handleNavigation}
-          currView={currView}
-        />
+        <MobileWidth pages={pages} handleNavigation={handleNavigation} currView={currView} />
       </div>
     </>
   );
@@ -42,21 +34,14 @@ interface HeaderScrollNavProps {
   pages: Array<number>;
 }
 
-const MobileWidth = ({
-  pages,
-  handleNavigation,
-  currView,
-}: HeaderScrollNavProps) => (
-  <div className="fixed bottom-16 flex transform left-1/2 -translate-x-1/2 h-10 border-white">
+const MobileWidth = ({ pages, handleNavigation, currView }: HeaderScrollNavProps) => (
+  <div className="fixed bottom-6 flex transform left-1/2 -translate-x-1/2 h-10 border-white">
     {pages.map((page) => (
       <div
         key={page}
-        className={clsx(
-          ' px-8 nav-scroll cursor-pointer relative flex justify-center items-center duration-300 ',
-          {
-            'nav-active': currView === page,
-          }
-        )}
+        className={clsx(' px-8 nav-scroll cursor-pointer relative flex justify-center items-center duration-300 ', {
+          'nav-active': currView === page,
+        })}
         onClick={() => handleNavigation(page)}
       >
         <div className="absolute bg-white rounded-full h-1.5 w-1.5"></div>
@@ -69,21 +54,14 @@ const MobileWidth = ({
   </div>
 );
 
-const DesktopWidth = ({
-  pages,
-  handleNavigation,
-  currView,
-}: HeaderScrollNavProps) => (
+const DesktopWidth = ({ pages, handleNavigation, currView }: HeaderScrollNavProps) => (
   <div className="fixed top-1/2 transform -translate-y-1/2 ml-10 border-white">
     {pages.map((page) => (
       <div
         key={page}
-        className={clsx(
-          'py-2 py-5 nav-scroll cursor-pointer relative flex justify-center items-center duration-300 ',
-          {
-            'nav-active': currView === page,
-          }
-        )}
+        className={clsx('py-2 py-5 nav-scroll cursor-pointer relative flex justify-center items-center duration-300 ', {
+          'nav-active': currView === page,
+        })}
         onClick={() => handleNavigation(page)}
       >
         <div className="absolute bg-white rounded-full h-1.5 w-1.5"></div>
