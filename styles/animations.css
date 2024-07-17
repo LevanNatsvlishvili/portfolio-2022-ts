@@ -6,3 +6,8 @@
 @import './animations/stars.css';
 @import './animations/loader.css';
 @import './animations/scrollMouse.css';
+
+.slider-auto {
+  animation: translateinfinite 40s linear infinite;
+  animation: translateinfinite 40s linear infinite;
+}
