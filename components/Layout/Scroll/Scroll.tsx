@@ -1,4 +1,5 @@
 import React, { ReactNode, useCallback, useEffect, useRef } from 'react';
+import _ from 'lodash';
 
 interface Scroll {
   children: ReactNode;
@@ -10,6 +11,8 @@ interface Scroll {
 function Scroll(props: Scroll) {
   const { children, shouldScrollDisplay, currView, setCurrView } = props;
   const pagesLength = 4;
+
+  const debounce = _.debounce((fn: Function) => fn(), 1000, { leading: true, trailing: false });
 
   const scrollDown = useCallback(() => {
     if (currView === pagesLength - 1) return;
@@ -43,10 +46,12 @@ function Scroll(props: Scroll) {
 
   useEffect(() => {
     let scrolled = false;
+    let scrolledTimes = 0;
     let touchStartY: number | null = null;
 
     const MouseWheelHandler = (e: any) => {
       if (!shouldScrollDisplay) return;
+      console.log(scrolledTimes);
       if (scrolled) return;
       var event = window.event || e;
       var delta = Math.max(-1, Math.min(1, event.wheelDelta || -event.detail));
@@ -61,6 +66,9 @@ function Scroll(props: Scroll) {
         setTimeout(() => (scrolled = false), 1000);
       }
     };
+
+    const debouncedScrollHandler = _.debounce(MouseWheelHandler, 250, { leading: true, trailing: false });
+
     const handleTouchStart = (e: TouchEvent) => {
       if (!shouldScrollDisplay) return;
       touchStartY = e.touches[0].clientY;
@@ -86,15 +94,15 @@ function Scroll(props: Scroll) {
       touchStartY = null;
     };
 
-    document.body.addEventListener('mousewheel', MouseWheelHandler, false);
-    document.body.addEventListener('DOMMouseScroll', MouseWheelHandler, false);
+    document.body.addEventListener('mousewheel', debouncedScrollHandler, false);
+    document.body.addEventListener('DOMMouseScroll', debouncedScrollHandler, false);
     // Add event listener for mobile touch screen
     document.body.addEventListener('touchstart', handleTouchStart, false);
     document.body.addEventListener('touchmove', handleTouchMove, false);
 
     return () => {
-      document.body.removeEventListener('mousewheel', MouseWheelHandler, false);
-      document.body.removeEventListener('DOMMouseScroll', MouseWheelHandler, false);
+      document.body.removeEventListener('mousewheel', debouncedScrollHandler, false);
+      document.body.removeEventListener('DOMMouseScroll', debouncedScrollHandler, false);
       document.body.removeEventListener('touchstart', handleTouchStart, false);
       document.body.removeEventListener('touchmove', handleTouchMove, false);
     };
