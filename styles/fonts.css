@@ -7,10 +7,6 @@
   src: url('./fonts/FiraSans-Bold.ttf');
 }
 @font-face {
-  font-family: 'FiragoMedium';
-  src: url('./fonts/FiraSans-Medium.ttf');
-}
-@font-face {
   font-family: 'FiragoThin';
   src: url('./fonts/FiraSans-Thin.ttf');
 }

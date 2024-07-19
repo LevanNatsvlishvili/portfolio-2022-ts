@@ -22,7 +22,6 @@ function Head(props: Head) {
     setIsNavOpen(!isNavOpen);
   };
 
-  console.log(shouldScrollDisplay);
   return (
     <header className="fixed w-full z-20">
       <HeaderContactLinks isNavOpen={isNavOpen} handleNavOpen={handleNavOpen} />

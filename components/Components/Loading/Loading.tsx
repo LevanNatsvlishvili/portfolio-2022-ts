@@ -6,7 +6,7 @@ interface Loading {
 }
 function Loading(props: Loading) {
   const { loading } = props;
-
+  console.log(loading);
   return (
     <div
       className={clsx(

@@ -9,7 +9,6 @@ interface HeaderScrollNav {
 
 const HeaderScrollNav = (props: HeaderScrollNav) => {
   const { currView, setCurrView, isNavMenuNeeded } = props;
-  console.log('imported');
   const pages = [0, 1, 2, 3];
 
   const handleNavigation = (val: number): void => {

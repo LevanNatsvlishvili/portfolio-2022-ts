@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, ReactNode, useMemo } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useMemo, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Url } from 'next/dist/shared/lib/router/router';
 
@@ -30,7 +30,7 @@ export const StoreContextProvider = ({ children }: StoreContextProvider) => {
   const router = useRouter();
 
   const [currView, setCurrView] = useState<number>(0);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const handleNavigationLoading = (path: Url): void => {
     setLoading(true);
@@ -41,6 +41,14 @@ export const StoreContextProvider = ({ children }: StoreContextProvider) => {
       setLoading(false);
     }, 1100);
   };
+
+  useEffect(() => {
+    return () => {
+      setTimeout(() => {
+        setLoading(false);
+      }, 2500);
+    };
+  }, []);
 
   const viewValues = useMemo(() => {
     return {
