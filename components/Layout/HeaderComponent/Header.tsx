@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive';
 
 const HeaderNavigation = dynamic(() => import('./HeaderNavigation'), { ssr: false });
 const HeaderNavigationMobile = dynamic(() => import('./HeaderNavigationMobile'), { ssr: false });
-const HeaderScrollNav = dynamic(() => import('./HeaderScrollNav'), { ssr: false });
+const HeaderScrollNav = dynamic(() => import('./StarScrollNav/StarScrollNav'), { ssr: false });
 
 interface Head {
   currView: number;
@@ -21,6 +21,8 @@ function Head(props: Head) {
   const handleNavOpen = () => {
     setIsNavOpen(!isNavOpen);
   };
+
+  console.log(shouldScrollDisplay);
   return (
     <header className="fixed w-full z-20">
       <HeaderContactLinks isNavOpen={isNavOpen} handleNavOpen={handleNavOpen} />
@@ -30,7 +32,9 @@ function Head(props: Head) {
       </div>
       <div className="block md:hidden">{isNavMenuNeeded && <HeaderNavigationMobile isNavOpen={isNavOpen} />}</div>
 
-      {shouldScrollDisplay && <HeaderScrollNav currView={currView} setCurrView={setCurrView} />}
+      {shouldScrollDisplay && (
+        <HeaderScrollNav currView={currView} setCurrView={setCurrView} isNavMenuNeeded={isNavMenuNeeded} />
+      )}
     </header>
   );
 }

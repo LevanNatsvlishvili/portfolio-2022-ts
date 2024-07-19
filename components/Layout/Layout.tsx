@@ -1,11 +1,11 @@
 import React, { ReactNode, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import useStore from 'utils/Store/Context';
-import Scroll from './Scroll';
 import Loading from 'components/Components/Loading';
 import HeaderComponent from './HeaderComponent';
 import dynamic from 'next/dynamic';
 const ScrollDown = dynamic(() => import('components/Components/ScrollDown'), { ssr: false });
+const Scroll = dynamic(() => import('./Scroll'), { ssr: false });
 
 function useQuery() {
   const location = useRouter();

@@ -4,11 +4,12 @@ import React from 'react';
 interface HeaderScrollNav {
   currView: number;
   setCurrView: (val: number) => void;
+  isNavMenuNeeded: boolean;
 }
 
 const HeaderScrollNav = (props: HeaderScrollNav) => {
-  const { currView, setCurrView } = props;
-
+  const { currView, setCurrView, isNavMenuNeeded } = props;
+  console.log('imported');
   const pages = [0, 1, 2, 3];
 
   const handleNavigation = (val: number): void => {
@@ -19,10 +20,10 @@ const HeaderScrollNav = (props: HeaderScrollNav) => {
   return (
     <>
       <div className="hidden lg:block">
-        <DesktopWidth pages={pages} handleNavigation={handleNavigation} currView={currView} />
+        {!isNavMenuNeeded && <DesktopWidth pages={pages} handleNavigation={handleNavigation} currView={currView} />}
       </div>
       <div className="lg:hidden">
-        <MobileWidth pages={pages} handleNavigation={handleNavigation} currView={currView} />
+        {isNavMenuNeeded && <MobileWidth pages={pages} handleNavigation={handleNavigation} currView={currView} />}
       </div>
     </>
   );

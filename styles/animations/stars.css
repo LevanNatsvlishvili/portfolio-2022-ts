@@ -4,48 +4,41 @@ body {
 
 .stars-container {
   height: 200vh;
-  width: 300%;
-  /* background: radial-gradient(ellipse at bottom, #1b2735 0%, #191f24 100%); */
+  width: 300vw;
   overflow: hidden;
   transition: 3000ms;
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
   -o-transform: translate(0, -50%);
   transform: translate(0, -50%);
-  margin-left: -150%;
-  margin-top: -50%;
 }
 
-.stars-1 {
-  transform: rotate(15deg) translate(-15%, -45%);
-}
-.stars-2 {
-  transform: rotate(30deg) translate(-30%, -40%);
-}
-.stars-3 {
-  transform: rotate(45deg) translate(-40%, -35%);
-}
-
-@media (min-width: 1224px) {
-  .stars-1 {
-    transform: rotate(15deg) translate(-10%, -50%);
-  }
-  .stars-2 {
-    transform: rotate(30deg) translate(-15%, -35%);
-  }
-  .stars-3 {
-    transform: rotate(45deg) translate(-20%, -20%);
-  }
-  .stars-container {
-    margin-left: -0%;
-    width: 200%;
-  }
-}
-
-@media (min-width: 600px) {
+@media (max-width: 600px) {
   .stars-container {
     margin-left: -20%;
     margin-top: 0%;
+  }
+}
+
+.stars-1 {
+  transform: rotate(15deg) translate(-5%, -30%);
+}
+.stars-2 {
+  transform: rotate(30deg) translate(-9%, -10%);
+}
+.stars-3 {
+  transform: rotate(45deg) translate(-10%, 20%);
+}
+
+@media (max-width: 600px) {
+  .stars-1 {
+    transform: rotate(10deg) translate(-20%, -50%);
+  }
+  .stars-2 {
+    transform: rotate(20deg) translate(-40%, -50%);
+  }
+  .stars-3 {
+    transform: rotate(30deg) translate(-60%, -50%);
   }
 }
 
