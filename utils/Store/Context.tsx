@@ -43,10 +43,11 @@ export const StoreContextProvider = ({ children }: StoreContextProvider) => {
   };
 
   useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 2500);
     return () => {
-      setTimeout(() => {
-        setLoading(false);
-      }, 2500);
+      clearTimeout(timeout);
     };
   }, []);
 
