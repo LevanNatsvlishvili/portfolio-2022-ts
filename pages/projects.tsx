@@ -5,21 +5,21 @@ import React from 'react';
 
 const projects = [
   {
-    title: 'Saba',
-    url: 'https://saba.com.ge',
+    title: 'Saba [Deploying Soon]',
+    // url: 'https://saba.com.ge',
     thumbnail: '/images/projects/saba.png',
     techStack: ['React', 'Tailwind', 'Typescript'],
   },
   {
     title: 'Archi',
     url: 'https://archi.ge',
-    thumbnail: '/images/projects/archi.png',
+    thumbnail: '/images/projects/archi.jpg',
     techStack: ['React', 'Bootstrap', 'Javascript'],
   },
   {
     title: 'Marsleaders',
     url: 'https://marsleaders.com',
-    thumbnail: '/images/projects/marsleaders.png',
+    thumbnail: '/images/projects/marsleaders.jpg',
     techStack: ['React', 'Bootstrap', 'Javascript'],
   },
   {
@@ -79,7 +79,7 @@ const Projects = () => {
 interface ProjectCard {
   project: {
     title: string;
-    url: string;
+    url?: string;
     thumbnail: string;
     techStack: Array<string>;
   };
@@ -91,16 +91,18 @@ const ProjectCard = (props: ProjectCard) => {
     <div className="project-card relative glass-effect ">
       <img src={thumbnail} className="w-full h-60 rounded-xl " alt={title} />
       <div className="opacity-0 z-10 transition duration-300 w-full h-full absolute top-0 rounded-xl bg-[#181D5E]/30 blur" />
-      <div className="opacity-0 z-30 flex transition duration-300 w-full h-full absolute top-0 rounded-xl items-center justify-center flex-col mt-10">
-        <a
-          className="text-grey-text border-blue-glow border-2 text-xs w-28 h-7 flex items-center justify-center bg-[#0D162860] rounded-3xl mt-5"
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          VISIT
-        </a>
-      </div>
+      {url && (
+        <div className="opacity-0 z-30 flex transition duration-300 w-full h-full absolute top-0 rounded-xl items-center justify-center flex-col mt-10">
+          <a
+            className="text-grey-text border-blue-glow border-2 text-xs w-28 h-7 flex items-center justify-center bg-[#0D162860] rounded-3xl mt-5"
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            VISIT
+          </a>
+        </div>
+      )}
       <div className="z-20 flex transition duration-300 w-full h-full absolute top-0 rounded-xl  items-center justify-center flex-col">
         <h1 className="text-lg text-center ">{title}</h1>
         <h3 className="text-sm text-orange w-1/2 text-center">{techStack.join(', ')}</h3>
@@ -119,14 +121,16 @@ const ProjectCardMobile = (props: ProjectCard) => {
       <div className="z-20 mt-4 flex transition duration-300 w-full h-full  top-0 rounded-xl  items-center justify-center flex-col">
         <h1 className="text-lg text-center ">{title}</h1>
         <h3 className="text-sm text-orange mt-2 w-1/2 text-center">{techStack.join(', ')}</h3>
-        <a
-          className="text-grey-text border-blue-glow border-2 text-xs w-28 h-7 flex items-center justify-center bg-[#0D162860] rounded-3xl mt-2"
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          VISIT
-        </a>
+        {url && (
+          <a
+            className="text-grey-text border-blue-glow border-2 text-xs w-28 h-7 flex items-center justify-center bg-[#0D162860] rounded-3xl mt-2"
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            VISIT
+          </a>
+        )}
       </div>
       <div className="h-1 border border-deep-blue mt-5" />
     </div>

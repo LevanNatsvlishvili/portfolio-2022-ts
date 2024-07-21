@@ -39,7 +39,7 @@ export const StoreContextProvider = ({ children }: StoreContextProvider) => {
     }, 400);
     setTimeout(() => {
       setLoading(false);
-    }, 1100);
+    }, 1500);
   };
 
   useEffect(() => {

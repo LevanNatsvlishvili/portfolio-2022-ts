@@ -5,7 +5,7 @@ import Button from 'components/Components/Button';
 import Image from 'next/image';
 import { paths } from 'utils/Paths';
 import useStore from 'utils/Store/Context';
-import me from 'public/images/me.jpeg';
+import me from 'public/images/me.jpg';
 
 function About() {
   const { currView, handleNavigationLoading } = useStore();

@@ -13,12 +13,11 @@ const fetchImages = (): Promise<Image[]> => {
       resolve([
         { id: 0, img: '/images/projects/citrus.png' },
         { id: 1, img: '/images/projects/dataninja.png' },
-        { id: 2, img: '/images/projects/tourism.png' },
+        { id: 2, img: '/images/projects/tourism.jpg' },
         { id: 3, img: '/images/projects/clothingstore.png' },
-        { id: 4, img: '/images/projects/portfolio.png' },
         { id: 5, img: '/images/projects/nbg.png' },
-        { id: 6, img: '/images/projects/marsleaders.png' },
-        { id: 7, img: '/images/projects/archi.png' },
+        { id: 6, img: '/images/projects/marsleaders.jpg' },
+        { id: 7, img: '/images/projects/archi.jpg' },
       ]);
     }, 1000); // Simulate network delay
   });
