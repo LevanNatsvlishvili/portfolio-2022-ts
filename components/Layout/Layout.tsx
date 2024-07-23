@@ -22,23 +22,22 @@ interface Layout {
 const checkDeviceStrength = () => {
   const cores = navigator.hardwareConcurrency || 1;
   const memory = (navigator as any).deviceMemory || 4;
-  console.log('memory', memory);
-  console.log('cores', cores);
-  return cores >= 4 && memory >= 8;
+  const isLowEnd = cores < 4 || memory < 4; // Adjust these thresholds as needed
+  return isLowEnd;
 };
 
 const Layout = ({ children }: Layout) => {
   const { currView, setCurrView, loading } = useStore();
   const shouldScrollDisplay = useQuery();
 
-  const [isHighPerformance, setIsHighPerformance] = useState(false);
+  const [isLowEndDevice, setIsLowEndDevice] = useState(false);
 
   useEffect(() => {
-    const isStrongDevice = checkDeviceStrength();
-    setIsHighPerformance(isStrongDevice);
+    const isLowEnd = checkDeviceStrength();
+    setIsLowEndDevice(isLowEnd);
   }, []);
 
-  console.log(isHighPerformance);
+  console.log(isLowEndDevice);
 
   useEffect(() => {
     if (shouldScrollDisplay) {
