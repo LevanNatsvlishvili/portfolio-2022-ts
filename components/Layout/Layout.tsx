@@ -49,8 +49,8 @@ const Layout = ({ children }: Layout) => {
 
       <div className={`stars-container stars-${currView}`}>
         <div id="stars"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
+        {/* <div id="stars2"></div> */}
+        {/* <div id="stars3"></div> */}
       </div>
     </div>
   );

@@ -12,8 +12,6 @@ function Scroll(props: Scroll) {
   const { children, shouldScrollDisplay, currView, setCurrView } = props;
   const pagesLength = 4;
 
-  const debounce = _.debounce((fn: Function) => fn(), 1000, { leading: true, trailing: false });
-
   const scrollDown = useCallback(() => {
     if (currView === pagesLength - 1) return;
     const axis = `translateY(${(currView + 1) * -1}00vh)`;
