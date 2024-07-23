@@ -10,7 +10,6 @@ interface SkillsProps {
 
 const Skills = (props: SkillsProps) => {
   const { title, skillSet } = props;
-  console.log(skillSet);
   return (
     <div className="grid-cols-12  mb-8 my-3">
       <div className="styled-card text-grey-text p-4 ">

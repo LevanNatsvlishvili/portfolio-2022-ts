@@ -19,26 +19,9 @@ interface Layout {
   children: ReactNode;
 }
 
-const checkDeviceStrength = () => {
-  const cores = navigator.hardwareConcurrency || 1;
-  const memory = (navigator as any).deviceMemory || 4;
-  console.log('memory', memory);
-  console.log('cores', cores);
-  return cores >= 4 && memory >= 8;
-};
-
 const Layout = ({ children }: Layout) => {
   const { currView, setCurrView, loading } = useStore();
   const shouldScrollDisplay = useQuery();
-
-  const [isHighPerformance, setIsHighPerformance] = useState(false);
-
-  useEffect(() => {
-    const isStrongDevice = checkDeviceStrength();
-    setIsHighPerformance(isStrongDevice);
-  }, []);
-
-  console.log(isHighPerformance);
 
   useEffect(() => {
     if (shouldScrollDisplay) {

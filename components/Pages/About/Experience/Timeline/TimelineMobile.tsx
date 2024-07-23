@@ -29,7 +29,6 @@ const TimelineMobile = (props: Timeline) => {
       const newPosition = sectionPercentage * i;
       arr.push({ ...companies[i], position: newPosition });
     }
-    console.log(arr);
     return arr;
   };
 
@@ -40,10 +39,7 @@ const TimelineMobile = (props: Timeline) => {
 
   return (
     <div className="w-full  flex items-center">
-      <div
-        style={{ height: positions.length * 5 + 'rem' }}
-        className={`ml-4 w-full  relative`}
-      >
+      <div style={{ height: positions.length * 5 + 'rem' }} className={`ml-4 w-full  relative`}>
         <div className="w-2.5 h-full rounded-3xl bg-[#2C3D7A]" />
         {positions?.map((position, index) => (
           <TimelineDot
@@ -67,17 +63,9 @@ const TimelineDot = (props: TimelineDot) => {
       style={isLast ? { bottom: 0 } : { top: `${company.position}%` }}
       className="absolute left-9 flex flex-col  cursor-pointer"
     >
-      <h1 className="text-white text-base sm:text-xl ">
-        {company.timelineTitle}
-      </h1>
-      <div
-        className={`w-4 h-4 ${
-          active ? 'bg-orange' : 'bg-grey-text'
-        } rounded-1/2 -ml-10 mt-6 absolute `}
-      />
-      <p className="text-grey-text text-sm sm:text-base  firago-light">
-        [{company.timelineDate}]
-      </p>
+      <h1 className="text-white text-base sm:text-xl ">{company.timelineTitle}</h1>
+      <div className={`w-4 h-4 ${active ? 'bg-orange' : 'bg-grey-text'} rounded-1/2 -ml-10 mt-6 absolute `} />
+      <p className="text-grey-text text-sm sm:text-base  firago-light">[{company.timelineDate}]</p>
     </div>
   );
 };

@@ -49,7 +49,6 @@ function Scroll(props: Scroll) {
 
     const MouseWheelHandler = (e: any) => {
       if (!shouldScrollDisplay) return;
-      console.log(scrolledTimes);
       if (scrolled) return;
       var event = window.event || e;
       var delta = Math.max(-1, Math.min(1, event.wheelDelta || -event.detail));
@@ -77,7 +76,6 @@ function Scroll(props: Scroll) {
       if (scrolled) return;
       const currentY = e.touches[0].clientY;
       const diffY = touchStartY - currentY;
-      console.log(diffY);
       if (diffY < 0) {
         scrolled = true;
         scrollUpRef.current();
