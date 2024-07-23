@@ -4,6 +4,7 @@ import useStore from 'utils/Store/Context';
 import Loading from 'components/Components/Loading';
 import HeaderComponent from './HeaderComponent';
 import dynamic from 'next/dynamic';
+import clsx from 'clsx';
 const ScrollDown = dynamic(() => import('components/Components/ScrollDown'), { ssr: false });
 const Scroll = dynamic(() => import('./Scroll'), { ssr: false });
 
@@ -32,14 +33,6 @@ const runPerformanceTest = () => {
   }
   const end = performance.now();
   return end - start;
-};
-
-const checkDeviceStrength = () => {
-  const cores = navigator.hardwareConcurrency || 1;
-  const memory = (navigator as any).deviceMemory || 4;
-  console.log(cores, memory);
-  const isLowEnd = cores <= 8 || memory <= 4; // Adjust these thresholds as needed
-  return isLowEnd;
 };
 
 const Layout = ({ children }: Layout) => {
@@ -79,7 +72,7 @@ const Layout = ({ children }: Layout) => {
       {shouldScrollDisplay && <ScrollDown currView={currView} />}
       {!shouldScrollDisplay && <main>{children}</main>}
 
-      <div className={`stars-container stars-${currView}`}>
+      <div className={clsx(`stars-container stars-${currView} `, isLowEndDevice > 6 ? 'low-end' : 'high-end')}>
         <div id="stars"></div>
         <div id="stars2"></div>
         <div id="stars3"></div>
