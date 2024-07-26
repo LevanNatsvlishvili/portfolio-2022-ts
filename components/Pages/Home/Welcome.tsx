@@ -11,7 +11,7 @@ function Welcome() {
           shouldDisplay={!loading && currView === 0}
           heading1="Levan"
           heading2="Natsvlishvili"
-          bottom="Front end developer"
+          bottom="Frontend developer, React, NextJS, ThreeJS"
         />
       </div>
       <div className="mt-1">

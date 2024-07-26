@@ -196,6 +196,9 @@ function Contact(props: { shouldDisplay: boolean }) {
             </g>
           </g>
         </svg>
+        <h1 className="text-center text-[16px] mb- text-grey-text">
+          Do you have a project in mind? <br /> <span className="text-orange">Send me a message</span>
+        </h1>
         <input
           type="text"
           className={`bg-[#141414] my-2 rounded-3xl w-full py-2 text-sm px-4 outline-none w-full 

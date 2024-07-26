@@ -8,6 +8,6 @@
 @import './animations/scrollMouse.css';
 
 .slider-auto {
-  animation: translateinfinite 40s linear infinite;
-  animation: translateinfinite 40s linear infinite;
+  animation: translateinfinite 100s linear infinite;
+  animation: translateinfinite 100s linear infinite;
 }
